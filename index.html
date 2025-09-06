@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="spotify.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Spotify - Web Player: Music for everyone</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="nav-logo">
+                <img src="/icons/logo.svg" alt="Spotify Logo">
+            </div>
+            <div class="nav-search">
+                <a href="Home" class="home-icon"><img src="/icons/home.svg" alt="Home"></a>
+                <div class="search-bar">
+                    <img src="/icons/search.svg" alt="Search">
+                    <input type="search" name="Search" placeholder="What do you want to play?">
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="/premium">Premium</a>
+                <a href="/support">Support</a>
+                <a href="/download">Download</a>
+                <span class="sep">|</span>
+                <a href="/login">Sign up</a>
+                <a id="a" class="btn-login" href="/login">Log In</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="left-panel">
+            <div class="your-library">
+                <h1>Your Library</h1>
+                <button class="plus"><img src="/icons/plus.svg" alt="Add"></button>
+            </div>
+            <div class="text-box">
+                <h1>Create your first playlist</h1>
+                <p>It's easy, we'll help you</p>
+                <button>Create playlist</button>
+            </div>
+            <div class="text-box">
+                <h1>Let's find some podcasts to follow</h1>
+                <p>We'll keep you updated on new episodes</p>
+                <button>Browse podcasts</button>
+            </div>
+            <div class="legal-links">
+                <p>
+                    <a href="/legal">Legal</a>
+                    <a href="/legal">Safety & Privacy Center</a>
+                    <a href="/legal">Privacy Policy</a>
+                </p>
+                <p>
+                    <a href="/legal">Cookies</a>
+                    <a href="/legal">About Ads</a>
+                    <a href="/legal">Accessibility</a>
+                </p>
+            </div>
+            <div class="language">
+                <button> <img src="/icons/LANG.SVG" alt="Language"> English</button>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <h1>Trending Songs</h1>
+            <div class="content-row song-cards">
+                <div class="card" data-index="0">
+                    <button class="play-btn"><img src="/icons/play.svg" alt="Play"></button>
+                    <img src="/images/pasoori.jpg" alt="Pasoori">
+                    <div class="card-text">
+                        <h3>Pasoori</h3>
+                        <p>Ali Sethi</p>
+                    </div>
+                </div>
+                <div class="card" data-index="1">
+                    <button class="play-btn"><img src="/icons/play.svg" alt="Play"></button>
+                    <img src="/images/mahi.jpg" alt="O Mahi O Mahi">
+                    <div class="card-text">
+                        <h3>O Mahi O Mahi</h3>
+                        <p>Arijit Singh</p>
+                    </div>
+                </div>
+                <div class="card" data-index="2">
+                    <button class="play-btn"><img src="/icons/play.svg" alt="Play"></button>
+                    <img src="/images/tu-aake.jpg" alt="Tu Aake Dekhle">
+                    <div class="card-text">
+                        <h3>Tu Aake Dekhle</h3>
+                        <p>King</p>
+                    </div>
+                </div>
+                <div class="card" data-index="3">
+                    <button class="play-btn"><img src="/icons/play.svg" alt="Play"></button>
+                    <img src="/images/maan.jpg" alt="Maan Meri Jaan">
+                    <div class="card-text">
+                        <h3>Maan Meri Jaan</h3>
+                        <p>King</p>
+                    </div>
+                </div>
+                <div class="card" data-index="4">
+                    <button class="play-btn"><img src="/icons/play.svg" alt="Play"></button>
+                    <img src="/images/kahani.jpg" alt="Kahani Suno 2.0">
+                    <div class="card-text">
+                        <h3>Kahani Suno 2.0</h3>
+                        <p>Kaifi Khalil</p>
+                    </div>
+                </div>
+            </div>
+
+            <h1>Popular Artists</h1>
+            <div class="content-row artist-cards">
+                <div class="card card-artist" data-index="0">
+                    <button class="play-btn"><img src="/icons/play.svg" alt="Play"></button>
+                    <img src="/images/arijit.jpg" alt="Arijit Singh">
+                    <div class="card-text">
+                        <h3>Arijit Singh</h3>
+                        <p>Artist</p>
+                    </div>
+                </div>
+                <div class="card card-artist" data-index="1">
+                    <button class="play-btn"><img src="/icons/play.svg" alt="Play"></button>
+                    <img src="/images/shreya.jpg" alt="Shreya Ghoshal">
+                    <div class="card-text">
+                        <h3>Shreya Ghoshal</h3>
+                        <p>Artist</p>
+                    </div>
+                </div>
+                <div class="card card-artist" data-index="2">
+                    <button class="play-btn"><img src="/icons/play.svg" alt="Play"></button>
+                    <img src="/images/atif.jpg" alt="Atif Aslam">
+                    <div class="card-text">
+                        <h3>Atif Aslam</h3>
+                        <p>Artist</p>
+                    </div>
+                </div>
+                <div class="card card-artist" data-index="3">
+                    <button class="play-btn"><img src="/icons/play.svg" alt="Play"></button>
+                    <img src="/images/neha.jpg" alt="Neha Kakkar">
+                    <div class="card-text">
+                        <h3>Neha Kakkar</h3>
+                        <p>Artist</p>
+                    </div>
+                </div>
+                <div class="card card-artist" data-index="4">
+                    <button class="play-btn"><img src="/icons/play.svg" alt="Play"></button>
+                    <img src="/images/asim.jpg" alt="Asim Azhar">
+                    <div class="card-text">
+                        <h3>Asim Azhar</h3>
+                        <p>Artist</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="play-bar">
+        <div class="song-info">
+            <img id="currentSongCover" src="/images/pasoori.jpg" alt="" width="50px">
+            <div class="song-details">
+                <div id="currentSongName">Pasoori</div>
+                <div id="currentSongArtist">Ali Sethi</div>
+            </div>
+        </div>
+        <div class="player-controls">
+            <div class="control-buttons">
+                <img id="previous" class="control-btn" src="/icons/previous.svg" alt="Previous">
+                <img id="playPause" class="control-btn" src="/icons/play.svg" alt="Play/Pause">
+                <img id="next" class="control-btn" src="/icons/next.svg" alt="Next">
+            </div>
+            <div class="seek-section">
+                <span id="currentTime">00:00</span>
+                <div class="seekbar">
+                    <div class="progress-fill"></div>
+                    <div class="circle"></div>
+                </div>
+                <span id="totalDuration">00:00</span>
+            </div>
+        </div>
+        <!-- Volume controls can be added here if needed -->
+    </div>
+
+    <script src="spotify.js"></script>
+</body>
+</html>
