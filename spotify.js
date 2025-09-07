@@ -16,17 +16,28 @@ let circle = document.querySelector('.circle');
 let currentTimeEl = document.getElementById('currentTime');
 let totalDurationEl = document.getElementById('totalDuration');
 let progressFill = document.querySelector('.progress-fill');
+let volumeSlider = document.getElementById('volumeSlider');
+let volumeIcon = document.getElementById('volumeIcon');
+const searchIcon = document.getElementById('searchIcon');
+const searchBar = document.querySelector('.search-bar');
+
+// JS to handle search bar toggle on mobile
+searchIcon.addEventListener('click', () => {
+    // Toggles the 'active' class on the search bar
+    // CSS then handles showing/hiding the input field
+    searchBar.classList.toggle('active');
+});
 
 // Function to play a song
 function playSong() {
     audioElement.play();
-    playPauseBtn.src = "icons/pause.svg";
+    playPauseBtn.src = "./icons/pause.svg";
 }
 
 // Function to pause a song
 function pauseSong() {
     audioElement.pause();
-    playPauseBtn.src = "icons/play.svg";
+    playPauseBtn.src = "./icons/play.svg";
 }
 
 // Function to update song info in the play bar
@@ -108,6 +119,32 @@ Array.from(document.querySelectorAll('.card .play-btn')).forEach((button, index)
         loadSong(index);
     });
 });
+// Volume icon manager
+function volumeIconManager() {
+    if (audioElement.volume === 0) {
+        volumeIcon.src = "./icons/mute.svg";
+    } else if (audioElement.volume < 0.5) {
+        volumeIcon.src = "./icons/lowVolume.svg";
+    } else {
+        volumeIcon.src = "./icons/highVolume.svg";
+    }
+}
+// 7. Volume control
+volumeSlider.addEventListener('input', (e) => {
+    audioElement.volume = e.target.value;
+    volumeIconManager();
+});
+volumeIcon.addEventListener('click', () => {
+    if (audioElement.volume > 0) {
+        audioElement.volume = 0;
+        volumeSlider.value = 0;
+        volumeIcon.src = "./icons/mute.svg";
+    } else {
+        audioElement.volume = 0.5;
+        volumeSlider.value = 0.5;
+        volumeIcon.src = "./icons/highVolume.svg";
+    }
+})
 
 // Initial setup on page load
 updateSongInfo(currentSongIndex);
