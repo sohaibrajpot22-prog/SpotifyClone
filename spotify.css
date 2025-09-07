@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
     margin: 0;
@@ -97,8 +97,8 @@ a {
     padding: 8px;
     border-radius: 100px;
     transition: all 0.2s ease;
-    width: 40px; 
-    height: 40px; 
+    width: 40px;
+    height: 40px;
     overflow: visible;
     margin-left: 20px;
 }
@@ -117,7 +117,6 @@ a {
 
 .search-bar img {
     width: 20px;
-    filter: invert(0.8);
     position: absolute;
     left: 15px;
 }
@@ -288,11 +287,19 @@ main {
     padding-bottom: 20px;
 }
 
+.song-cards,
+.artist-cards {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
 .card {
     background-color: #1F1F1F;
     border-radius: 10px;
     padding: 15px;
-    width: 200px;
+    flex-grow: 1;
+    flex-basis: 180px;
+    max-width: 200px;
     flex-shrink: 0;
     transition: all 0.2s ease;
     position: relative;
@@ -362,7 +369,7 @@ main {
 
 /* Play Bar */
 .play-bar {
-    position: fixed;
+    position: sticky;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -405,14 +412,14 @@ main {
 
 .control-buttons {
     display: flex;
-    gap: 40px; 
+    gap: 40px;
     margin-bottom: 10px;
 }
 
 .control-btn {
     cursor: pointer;
     width: 40px;
-    height: 40px; 
+    height: 40px;
     opacity: 0.8;
     filter: invert(1);
     transition: opacity 0.2s;
@@ -424,7 +431,7 @@ main {
 
 #playPause {
     width: 40px;
-    height: 40px; 
+    height: 40px;
 }
 
 .seek-section {
@@ -437,7 +444,7 @@ main {
 
 .seekbar {
     width: 80%;
-    height: 6px; 
+    height: 6px;
     background-color: #535353;
     border-radius: 2px;
     cursor: pointer;
@@ -459,8 +466,8 @@ main {
 }
 
 .circle {
-    width: 16px; /* Circle ka size badha diya */
-    height: 16px; /* Circle ka size badha diya */
+    width: 16px;
+    height: 16px;
     background-color: white;
     border-radius: 50%;
     position: absolute;
@@ -477,4 +484,209 @@ main {
     color: #b3b3b3;
     min-width: 40px;
     text-align: center;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 25%;
+    justify-content: flex-end;
+}
+
+.volume-control img {
+    width: 20px;
+    filter: invert(1);
+    cursor: pointer;
+}
+
+/* --- Responsive CSS (Media Queries) --- */
+
+@media (max-width: 1024px) {
+    .nav-search .search-bar input {
+        width: 300px;
+    }
+
+    .right-panel {
+        padding: 20px;
+    }
+
+    .card {
+        flex-basis: 150px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    nav {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px;
+    }
+
+    .nav-logo {
+        flex-grow: 1;
+        order: 1;
+    }
+
+    .nav-search {
+        order: 3;
+        width: 100%;
+        margin-top: 10px;
+        margin-left: 0;
+        justify-content: flex-start;
+    }
+
+    .search-bar {
+        width: 10px;
+        margin-left: 10px;
+    }
+
+    .search-bar img {
+        position: static;
+        width: 30px;
+        height: 30px;
+        background-color: var(--spotify-darkGray);
+        padding: 8px;
+        border-radius: 50%;
+    }
+
+    .search-bar input {
+        width: 0;
+        padding-left: 0;
+        visibility: hidden;
+        transition: width 0.3s ease, padding 0.3s ease, opacity 0.3s ease;
+    }
+
+    /* CSS rule for when the search bar is active */
+    .search-bar.active input {
+        width: 80vw;
+        padding-left: 50px;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .nav-links {
+        display: none;
+        order: 2;
+    }
+
+    main {
+        flex-direction: column;
+        padding: 5px;
+        gap: 5px;
+    }
+
+    .left-panel {
+        width: 100%;
+        order: 1;
+        padding: 10px;
+    }
+
+    .left-panel .your-library h1 {
+        font-size: 16px;
+    }
+
+    /* Left panel text box ko chota kiya */
+    .left-panel .text-box {
+        padding: 10px;
+        margin-top: 10px;
+        gap: 5px;
+    }
+
+    .left-panel .text-box h1 {
+        font-size: 13px;
+    }
+
+    .left-panel .text-box p {
+        font-size: 12px;
+    }
+
+    .left-panel .text-box button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    .left-panel .legal-links {
+        margin-top: 20px;
+    }
+
+    .left-panel .legal-links p a {
+        font-size: 10px;
+    }
+
+    .left-panel .language button {
+        margin-top: 15px;
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    .right-panel {
+        width: 100%;
+        order: 2;
+        padding: 15px;
+    }
+
+    .content-row {
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        width: calc(50% - 10px);
+        flex-basis: auto;
+        max-width: none;
+    }
+
+    .card .play-btn {
+        bottom: 70px;
+    }
+
+    .play-bar {
+        flex-direction: column;
+        padding: 10px;
+        gap: 10px;
+        height: auto;
+        justify-content: center;
+        text-align: center;
+    }
+
+
+    .circle {
+        width: 14px;
+        height: 14px;
+    }
+
+    .song-info {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 5px;
+    }
+
+    .player-controls {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .control-btn {
+        height: 20px;
+        width: 20px;
+    }
+
+    .seek-section {
+        width: 100%;
+        gap: 10px;
+    }
+
+    .seekbar {
+        width: 70%;
+        height: 4px;
+    }
+
+    .volume-control {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
 }
