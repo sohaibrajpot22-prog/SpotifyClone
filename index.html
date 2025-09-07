@@ -16,8 +16,9 @@
             </div>
             <div class="nav-search">
                 <a href="Home" class="home-icon"><img src="./icons/home.svg" alt="Home"></a>
+                <!-- Updated: Search icon ko click karne se input field open hoga -->
                 <div class="search-bar">
-                    <img src="./icons/search.svg" alt="Search">
+                    <img src="./icons/search.svg" alt="Search" id="searchIcon">
                     <input type="search" name="Search" placeholder="What do you want to play?">
                 </div>
             </div>
@@ -36,7 +37,9 @@
         <div class="left-panel">
             <div class="your-library">
                 <h1>Your Library</h1>
-                <button class="plus"><img src="./icons/plus.svg" alt="Add"></button>
+                <button>
+                    <img src="./icons/plus.svg" alt="Add">
+                </button>
             </div>
             <div class="text-box">
                 <h1>Create your first playlist</h1>
@@ -50,105 +53,127 @@
             </div>
             <div class="legal-links">
                 <p>
-                    <a href="/legal">Legal</a>
-                    <a href="/legal">Safety & Privacy Center</a>
-                    <a href="/legal">Privacy Policy</a>
+                    <a href="#">Legal</a>
+                    <a href="#">Safety & Privacy Center</a>
+                    <a href="#">Privacy Policy</a>
                 </p>
                 <p>
-                    <a href="/legal">Cookies</a>
-                    <a href="/legal">About Ads</a>
-                    <a href="/legal">Accessibility</a>
+                    <a href="#">Cookies</a>
+                    <a href="#">About Ads</a>
+                    <a href="#">Accessibility</a>
                 </p>
             </div>
             <div class="language">
-                <button> <img src="./icons/LANG.SVG" alt="Language"> English</button>
+                <button>
+                    <img src="./icons/LANG.SVG" alt="Language">
+                    English
+                </button>
             </div>
         </div>
-
         <div class="right-panel">
-            <h1>Trending Songs</h1>
+            <h1>Made for you</h1>
             <div class="content-row song-cards">
-                <div class="card" data-index="0">
-                    <button class="play-btn"><img src="./icons/play.svg" alt="Play"></button>
-                    <img src="./images/pasoori.jpg" alt="Pasoori">
-                    <div class="card-text">
-                        <h3>Pasoori</h3>
-                        <p>Ali Sethi</p>
-                    </div>
-                </div>
-                <div class="card" data-index="1">
-                    <button class="play-btn"><img src="./icons/play.svg" alt="Play"></button>
-                    <img src="./images/mahi.jpg" alt="O Mahi O Mahi">
+                <div class="card">
+                    <img src="./images/mahi.jpg" alt="Album Cover">
+                    <button class="play-btn">
+                        <img src="./icons/play.svg" alt="Play Button">
+                    </button>
                     <div class="card-text">
                         <h3>O Mahi O Mahi</h3>
                         <p>Arijit Singh</p>
                     </div>
                 </div>
-                <div class="card" data-index="2">
-                    <button class="play-btn"><img src="./icons/play.svg" alt="Play"></button>
-                    <img src="./images/tu-aake.jpg" alt="Tu Aake Dekhle">
-                    <div class="card-text">
-                        <h3>Tu Aake Dekhle</h3>
-                        <p>King</p>
-                    </div>
-                </div>
-                <div class="card" data-index="3">
-                    <button class="play-btn"><img src="./icons/play.svg" alt="Play"></button>
-                    <img src="./images/maan.jpg" alt="Maan Meri Jaan">
+                <div class="card">
+                    <img src="./images/maan.jpg" alt="Album Cover">
+                    <button class="play-btn">
+                        <img src="./icons/play.svg" alt="Play Button">
+                    </button>
                     <div class="card-text">
                         <h3>Maan Meri Jaan</h3>
                         <p>King</p>
                     </div>
                 </div>
-                <div class="card" data-index="4">
-                    <button class="play-btn"><img src="./icons/play.svg" alt="Play"></button>
-                    <img src="./images/kahani.jpg" alt="Kahani Suno 2.0">
+                <div class="card">
+                    <img src="./images/kahani.jpg" alt="Album Cover">
+                    <button class="play-btn">
+                        <img src="./icons/play.svg" alt="Play Button">
+                    </button>
                     <div class="card-text">
                         <h3>Kahani Suno 2.0</h3>
                         <p>Kaifi Khalil</p>
                     </div>
                 </div>
+                <div class="card">
+                    <img src="./images/tu-aake.jpg" alt="Album Cover">
+                    <button class="play-btn">
+                        <img src="./icons/play.svg" alt="Play Button">
+                    </button>
+                    <div class="card-text">
+                        <h3>Tu Aake Dekhle</h3>
+                        <p>King</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./images/pasoori.jpg" alt="Album Cover">
+                    <button class="play-btn">
+                        <img src="./icons/play.svg" alt="Play Button">
+                    </button>
+                    <div class="card-text">
+                        <h3>Pasoori</h3>
+                        <p>Ali Sethi</p>
+                    </div>
+                </div>
             </div>
 
-            <h1>Popular Artists</h1>
+            <h1>Trending Artists</h1>
             <div class="content-row artist-cards">
-                <div class="card card-artist" data-index="0">
-                    <button class="play-btn"><img src="./icons/play.svg" alt="Play"></button>
-                    <img src="./images/arijit.jpg" alt="Arijit Singh">
-                    <div class="card-text">
-                        <h3>Arijit Singh</h3>
-                        <p>Artist</p>
-                    </div>
-                </div>
-                <div class="card card-artist" data-index="1">
-                    <button class="play-btn"><img src="./icons/play.svg" alt="Play"></button>
-                    <img src="./images/shreya.jpg" alt="Shreya Ghoshal">
-                    <div class="card-text">
-                        <h3>Shreya Ghoshal</h3>
-                        <p>Artist</p>
-                    </div>
-                </div>
-                <div class="card card-artist" data-index="2">
-                    <button class="play-btn"><img src="./icons/play.svg" alt="Play"></button>
-                    <img src="./images/atif.jpg" alt="Atif Aslam">
+                <div class="card card-artist">
+                    <img src="./images/atif.jpg" alt="Artist Photo">
+                    <button class="play-btn">
+                        <img src="./icons/play.svg" alt="Play Button">
+                    </button>
                     <div class="card-text">
                         <h3>Atif Aslam</h3>
                         <p>Artist</p>
                     </div>
                 </div>
-                <div class="card card-artist" data-index="3">
-                    <button class="play-btn"><img src="./icons/play.svg" alt="Play"></button>
-                    <img src="./images/neha.jpg" alt="Neha Kakkar">
+                <div class="card card-artist">
+                    <img src="./images/shreya.jpg" alt="Artist Photo">
+                    <button class="play-btn">
+                        <img src="./icons/play.svg" alt="Play Button">
+                    </button>
                     <div class="card-text">
-                        <h3>Neha Kakkar</h3>
+                        <h3>Shreya Ghoshal</h3>
                         <p>Artist</p>
                     </div>
                 </div>
-                <div class="card card-artist" data-index="4">
-                    <button class="play-btn"><img src="./icons/play.svg" alt="Play"></button>
-                    <img src="./images/asim.jpg" alt="Asim Azhar">
+                <div class="card card-artist">
+                    <img src="./images/neha.jpg" alt="Artist Photo">
+                    <button class="play-btn">
+                        <img src="./icons/play.svg" alt="Play Button">
+                    </button>
                     <div class="card-text">
-                        <h3>Asim Azhar</h3>
+                        <h3>Asim azhar</h3>
+                        <p>Artist</p>
+                    </div>
+                </div>
+                <div class="card card-artist">
+                    <img src="./images/asim.jpg" alt="Artist Photo">
+                    <button class="play-btn">
+                        <img src="./icons/play.svg" alt="Play Button">
+                    </button>
+                    <div class="card-text">
+                        <h3>Arjit Singh</h3>
+                        <p>Artist</p>
+                    </div>
+                </div>
+                <div class="card card-artist">
+                    <img src="./images/arijit.jpg" alt="Artist Photo">
+                    <button class="play-btn">
+                        <img src="./icons/play.svg" alt="Play Button">
+                    </button>
+                    <div class="card-text">
+                        <h3>Billie Eilish</h3>
                         <p>Artist</p>
                     </div>
                 </div>
@@ -180,12 +205,11 @@
             </div>
         </div>
         <div class="volume-control">
-            <img src="./icons/volume.svg" alt="Volume">
+            <img id="volumeIcon" src="./icons/highVolume.svg" alt="Volume">
             <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.5">
         </div>
     </div>
-
+    
     <script src="spotify.js"></script>
 </body>
 </html>
-
